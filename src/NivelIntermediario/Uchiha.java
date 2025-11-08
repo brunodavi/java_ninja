@@ -7,6 +7,11 @@ public class Uchiha extends Ninja {
         this.nome = nome + " Uchiha";
     }
 
+    @Override
+    public void ativarHabilidadeEspecial() {
+        System.out.println(nome + " ativou o sharingan");
+    }
+
     public void ativarSharingan() {
         System.out.println(nome + " ativou o sharingan");
     }

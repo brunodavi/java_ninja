@@ -2,22 +2,19 @@ package NivelIntermediario;
 
 public class Main {
     public static void main(String[] args) {
-        Uzumaki Naruto = new Uzumaki("Naruto");
-        Naruto.idade = 17;
-        Naruto.aldeia = "Aldeia da Folha";
+        Hokages hashirama = new Hokages();
+        hashirama.nome = "Hashirama";
+        hashirama.idade = 30;
+        hashirama.vivoOuNao = false;
 
-        Uchiha Sasuke = new Uchiha("Sasuke");
-        Sasuke.idade = 18;
-        Sasuke.aldeia = "Aldeia da Folha";
-        Sasuke.habilidadeEspecial = "Sharingan";
-        Sasuke.missao = "Derrotar ninja inimigo";
-        Sasuke.statusMissao = "Em andamento";
-        Sasuke.nivelDificuldade = "Raking A";
-        Sasuke.mostrarInformacoes();
+        Hokages tobirama = new Hokages(
+                "Tobirama",
+                49,
+                false
+        );
 
-        Haruno Sakura = new Haruno("Sakura");
-        Sakura.idade = 18;
-        Sakura.aldeia = "Aldeia da Folha";
-
+        hashirama.mostrarInformacoes();
+        System.out.println();
+        tobirama.mostrarInformacoes();
     }
 }

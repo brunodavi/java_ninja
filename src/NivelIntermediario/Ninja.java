@@ -16,6 +16,10 @@ public class Ninja {
                 + " anos e sou da " + aldeia;
     }
 
+    public void ativarHabilidadeEspecial() {
+        System.out.println(nome + " ativou a habilidade básica");
+    }
+
     public void seApresentar() {
         System.out.println(getApresentacao());
     }
