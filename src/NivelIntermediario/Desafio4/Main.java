@@ -5,13 +5,13 @@ public class Main {
         Ninja ninjaBasico = new NinjaBasico(
                 "Ninja Basico 1",
                 34,
-                "Taijutsu"
+                TipoHabilidade.TAIJUTSU
         );
 
         Ninja ninjaAvancado = new NinjaAvancado(
                 "Ninja Avançado 1",
                 34,
-                "Katon",
+                TipoHabilidade.NINJUTSU,
                 "Fogo"
         );
 

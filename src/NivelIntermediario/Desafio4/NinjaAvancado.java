@@ -3,10 +3,10 @@ package NivelIntermediario.Desafio4;
 public class NinjaAvancado implements Ninja {
     String nome;
     int idade;
-    String habilidade;
+    TipoHabilidade habilidade;
     String especialidade;
 
-    public NinjaAvancado(String nome, int idade, String habilidade, String especialidade) {
+    public NinjaAvancado(String nome, int idade, TipoHabilidade habilidade, String especialidade) {
         this.nome = nome;
         this.idade = idade;
         this.habilidade = habilidade;
