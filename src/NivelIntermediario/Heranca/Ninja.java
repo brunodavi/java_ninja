@@ -1,14 +1,14 @@
-package NivelIntermediario;
+package NivelIntermediario.Heranca;
 
 public class Ninja {
-    String nome;
-    int idade;
-    String aldeia;
+    public String nome;
+    public int idade;
+    public String aldeia;
 
-    String missao;
-    String statusMissao;
-    String nivelDificuldade;
-    String habilidadeEspecial;
+    public String missao;
+    public String statusMissao;
+    public String nivelDificuldade;
+    public String habilidadeEspecial;
 
     public String getApresentacao() {
         return "Meu nome é " + nome

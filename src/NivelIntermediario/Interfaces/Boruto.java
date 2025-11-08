@@ -1,10 +1,8 @@
-package NivelIntermediario;
+package NivelIntermediario.Interfaces;
+
+import NivelIntermediario.Construtores.Uzumaki;
 
 public class Boruto extends Uzumaki implements HyugaUzumaki {
-    Boruto(String nome) {
-        super(nome);
-    }
-
     @Override
     public void AtivarKarma() {
         System.out.println("O Karma ativou");

@@ -1,18 +1,12 @@
-package NivelIntermediario;
+package NivelIntermediario.Polimorfismo;
+
+import NivelIntermediario.Heranca.Ninja;
 
 public class Uchiha extends Ninja {
     String habilidadeEspecial = "Sharingan";
 
-    Uchiha(String nome) {
-        this.nome = nome + " Uchiha";
-    }
-
     @Override
     public void ativarHabilidadeEspecial() {
-        System.out.println(nome + " ativou o sharingan");
-    }
-
-    public void ativarSharingan() {
         System.out.println(nome + " ativou o sharingan");
     }
 

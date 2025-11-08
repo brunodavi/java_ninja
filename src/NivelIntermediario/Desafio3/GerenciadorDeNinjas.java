@@ -1,4 +1,6 @@
-package NivelIntermediario;
+package NivelIntermediario.Desafio3;
+
+import NivelIntermediario.Heranca.Ninja;
 
 import java.util.Scanner;
 

@@ -1,4 +1,6 @@
-package NivelIntermediario;
+package NivelIntermediario.Desafio3;
+
+import NivelIntermediario.Heranca.Ninja;
 
 public class Desafio3 {
     public static void main(String[] args) {

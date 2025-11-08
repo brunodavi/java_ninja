@@ -1,6 +1,7 @@
-package NivelIntermediario;
+package NivelIntermediario.ClassesAbstratas;
 
-public class Hokages {
+// Não pode ser criada sem ser herdada antes
+public abstract class Hokages {
     Hokages() {}
 
     Hokages(String nome, int idade, boolean vivoOuNao) {
@@ -18,4 +19,6 @@ public class Hokages {
         System.out.println("Idade: " + idade);
         System.out.println("Está vivo: " + (vivoOuNao ? "Sim" : "Não"));
     }
+
+    public abstract void obterSabedoriaHokage();
 }
