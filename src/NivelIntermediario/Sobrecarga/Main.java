@@ -13,8 +13,6 @@ public class Main {
                 NivelNinja.KAGE
         );
 
-        madara.mostrarInformacoes();
-        madara.inteligenciaNinja();
-        madara.inteligenciaNinja(100);
+        System.out.println(madara);
     }
 }

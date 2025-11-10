@@ -23,6 +23,16 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
         this.aldeia = aldeia;
     }
 
+    @Override
+    public String toString() {
+        return nome
+                + "\n- Clan: " + clan
+                + "\n- Idade: " + idade
+                + "\n- Aldeia: " + aldeia
+                + "\n- Missões Concluídas: " + missoesConcluidas
+                + "\n- Rank: " + rank;
+    }
+
     // Todo: Sobrecarga de construtor com os novos atributos
     public Ninja(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
         this(nome, idade, aldeia);
