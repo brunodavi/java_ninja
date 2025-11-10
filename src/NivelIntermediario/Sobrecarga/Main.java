@@ -14,5 +14,7 @@ public class Main {
         );
 
         madara.mostrarInformacoes();
+        madara.inteligenciaNinja();
+        madara.inteligenciaNinja(100);
     }
 }

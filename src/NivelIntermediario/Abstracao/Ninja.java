@@ -47,4 +47,25 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
     public void estrategiaDeCombate() {
         System.out.println("Essa é minha estrategia de combate");
     }
+
+    // Inteligencia Ninja - Padrão
+    @Override
+    public void inteligenciaNinja() {
+        System.out.println("Nível básico de inteligencia");
+    }
+
+    // Inteligencia Ninja - Sobrecarga
+    @Override
+    public void inteligenciaNinja(int qi) {
+        String nivelDeInteligencia;
+        if (qi > 0 && qi < 80) {
+            nivelDeInteligencia = "básico";
+        } else if (qi > 80 && qi < 100) {
+            nivelDeInteligencia = "médio";
+        } else {
+            nivelDeInteligencia = "alto";
+        }
+
+        System.out.println("Nível " + nivelDeInteligencia + " de inteligencia");
+    }
 }
