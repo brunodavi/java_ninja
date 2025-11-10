@@ -8,7 +8,7 @@ public class ContaPoupanca extends ContaBancaria {
     @Override
     public void depositar(double valor) {
         System.out.println("Valor depositado na conta poupança: " + valor);
-        System.out.println("Aviso: Saques tem uma taxa de 10%");
+        System.out.println("Aviso: Saques tem uma taxa de 1%");
         double taxa = valor * 0.01;
         this.saldo += valor - taxa;
     }
