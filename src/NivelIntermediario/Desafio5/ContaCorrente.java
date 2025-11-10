@@ -1,8 +1,8 @@
 package NivelIntermediario.Desafio5;
 
 public class ContaCorrente extends ContaBancaria {
-    public ContaCorrente(double saldo) {
-        super(saldo);
+    public ContaCorrente(double saldo, TipoConta tipoConta) {
+        super(saldo, tipoConta);
     }
 
     @Override

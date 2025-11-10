@@ -2,9 +2,11 @@ package NivelIntermediario.Desafio5;
 
 public abstract class ContaBancaria implements Conta {
     double saldo;
+    TipoConta tipoConta;
 
-    public ContaBancaria(double saldo) {
+    public ContaBancaria(double saldo, TipoConta tipoConta) {
         this.saldo = saldo;
+        this.tipoConta = tipoConta;
     }
 
     @Override
