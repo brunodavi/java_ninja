@@ -1,7 +1,6 @@
 package NivelIntermediario.Abstracao;
 
 public abstract class Ninja implements EstrategiaDeBatalhaNinja {
-    // TODO: Adicionar 2 novos atributos: missoesConcluidas e rank
     String nome;
     int idade;
     String aldeia;
@@ -33,7 +32,6 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
                 + "\n- Rank: " + rank;
     }
 
-    // Todo: Sobrecarga de construtor com os novos atributos
     public Ninja(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
         this(nome, idade, aldeia);
         this.missoesConcluidas = missoesConcluidas;
