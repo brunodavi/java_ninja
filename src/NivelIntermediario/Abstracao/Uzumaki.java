@@ -1,12 +1,19 @@
 package NivelIntermediario.Abstracao;
 
 public class Uzumaki extends Ninja {
-    public Uzumaki(String nome, int idade, String aldeia) {
-        super(nome + " Uzumaki", idade, aldeia);
+    public Uzumaki() {
     }
 
     public Uzumaki(String nome) {
-        this.nome = nome + " Uzumaki";
+        super(nome);
+    }
+
+    public Uzumaki(String nome, int idade, String aldeia) {
+        super(nome, idade, aldeia);
+    }
+
+    public Uzumaki(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
+        super(nome, idade, aldeia, missoesConcluidas, rank);
     }
 
     @Override

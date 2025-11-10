@@ -1,12 +1,19 @@
 package NivelIntermediario.Abstracao;
 
 public class Uchiha extends Ninja {
-    public Uchiha(String nome, int idade, String aldeia) {
-        super(nome + " Uchiha", idade, aldeia);
+    public Uchiha() {
     }
 
     public Uchiha(String nome) {
-        this.nome = nome + " Uchiha";
+        super(nome);
+    }
+
+    public Uchiha(String nome, int idade, String aldeia) {
+        super(nome, idade, aldeia);
+    }
+
+    public Uchiha(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
+        super(nome, idade, aldeia, missoesConcluidas, rank);
     }
 
     @Override
