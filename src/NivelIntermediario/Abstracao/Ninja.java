@@ -7,6 +7,7 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
     int missoesConcluidas;
     NivelNinja rank;
     String clan;
+    public final double altura = 2.10;
 
     public Ninja() {
     }
@@ -22,6 +23,12 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
         this.aldeia = aldeia;
     }
 
+    public Ninja(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
+        this(nome, idade, aldeia);
+        this.missoesConcluidas = missoesConcluidas;
+        this.rank = rank;
+    }
+
     @Override
     public String toString() {
         return nome
@@ -32,13 +39,12 @@ public abstract class Ninja implements EstrategiaDeBatalhaNinja {
                 + "\n- Rank: " + rank;
     }
 
-    public Ninja(String nome, int idade, String aldeia, int missoesConcluidas, NivelNinja rank) {
-        this(nome, idade, aldeia);
-        this.missoesConcluidas = missoesConcluidas;
-        this.rank = rank;
-    }
-
     public abstract void habilidadeEspecial();
+
+    // TODO: Ataque que todo ninja vai fazer
+    final public void tacarKunai() {
+        System.out.println("Taquei uma kunai");
+    }
 
     public void mostrarInformacoes() {
         System.out.println("Nome: " + nome);

@@ -27,4 +27,12 @@ public class Uzumaki extends Ninja {
     public void estrategiaDeBatalha() {
         System.out.println("Essa é minha estrategia: sair batendo em tudo que se move e fazer o discurso motivacional");
     }
+
+// Não é possible porque tacarKunai é um final
+/*
+    @Override
+    public void tacarKunai() {
+        System.out.println("Taquei uma shrike gigante");
+    }
+*/
 }
