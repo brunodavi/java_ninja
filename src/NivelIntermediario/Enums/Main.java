@@ -11,5 +11,7 @@ public class Main {
         naruto.darMissao(boruto, missao);
 
         System.out.println(boruto);
+
+        boruto.missao.exibirDetalhes();
     }
 }

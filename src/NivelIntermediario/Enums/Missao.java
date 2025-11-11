@@ -17,6 +17,14 @@ public class Missao {
         return rank;
     }
 
+    public void exibirDetalhes() {
+        System.out.println("======= Detalhes da Missão =======");
+        System.out.println("Nome: " + nome);
+        System.out.println("Rank: " + rank);
+        System.out.println("- Descrição: " + rank.descricao);
+        System.out.println("- Dificuldade: " + rank.dificuldade);
+    }
+
     @Override
     public String toString() {
         return "Missao{" +
