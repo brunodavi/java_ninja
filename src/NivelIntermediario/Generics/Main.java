@@ -2,11 +2,14 @@ package NivelIntermediario.Generics;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("----------- Sem Generics ----------");
+        semGenerics();
+
         System.out.println("----------- Com Generics ----------");
         comGenerics();
 
-        System.out.println("----------- Com Generics ----------");
-        semGenerics();
+        System.out.println("----------- Com Generics Como String ----------");
+        comGenericsComoString();
     }
 
     public static void comGenerics() {
@@ -15,6 +18,19 @@ public class Main {
         EquipamentoNinja pergaminho = new EquipamentoNinja("pergaminho");
 
         BolsaGenerica<EquipamentoNinja> bolsaGenerica = new BolsaGenerica<>();
+        bolsaGenerica.addEquipamento(kunai);
+        bolsaGenerica.addEquipamento(shuriken);
+        bolsaGenerica.addEquipamento(pergaminho);
+
+        System.out.println(bolsaGenerica);
+    }
+
+    public static void comGenericsComoString() {
+        String kunai = "Kunai";
+        String shuriken = "Shuriken";
+        String pergaminho = "Pergaminho";
+
+        BolsaGenerica<String> bolsaGenerica = new BolsaGenerica<>();
         bolsaGenerica.addEquipamento(kunai);
         bolsaGenerica.addEquipamento(shuriken);
         bolsaGenerica.addEquipamento(pergaminho);
