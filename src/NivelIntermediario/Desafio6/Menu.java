@@ -1,5 +1,6 @@
 package NivelIntermediario.Desafio6;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,6 +43,12 @@ class Menu {
                 buscarUmNinja();
                 break;
             case 6:
+                buscarUmNinjaPeloNome();
+                break;
+            case 7:
+                ordenarLista();
+                break;
+            case 8:
                 sair();
                 return;
             default:
@@ -84,7 +91,7 @@ class Menu {
             return;
         }
         Ninja ninjaRemovido = buscarNinja();
-        boolean confirmado = obterConfirmacao("Tem certeza que quer remover esse ninja?");
+        boolean confirmado = obterConfirmacao("Deseja remover esse ninja?");
         if (confirmado) {
             ninjas.remove(ninjaRemovido);
             System.out.println("Ninja removido com sucesso");
@@ -105,6 +112,32 @@ class Menu {
         }
     }
 
+    public void ordenarLista() {
+        System.out.println("Ordenar por:");
+        System.out.println("1) Nome");
+        System.out.println("2) Idade");
+        System.out.println("3) Vila");
+        int numeroSelecionado = obterNumero("Selecione um número: ");
+        switch (numeroSelecionado) {
+            case 1:
+                ninjas.sort(Comparator.comparing(Ninja::nome));
+                System.out.println("Lista ordenada para o nome dos ninjas");
+                return;
+            case 2:
+                ninjas.sort(Comparator.comparingInt(Ninja::idade));
+                System.out.println("Lista ordenada para o idade dos ninjas");
+                return;
+            case 3:
+                ninjas.sort(Comparator.comparing(Ninja::vila));
+                System.out.println("Lista ordenada para o vila dos ninjas");
+                return;
+            default:
+                System.out.println("Opção inválida");
+                break;
+        }
+        ordenarLista();
+    }
+
     public void buscarUmNinja() {
         if (ninjas.isEmpty()) {
             System.out.println("Nenhum ninja foi adicionado");
@@ -112,6 +145,26 @@ class Menu {
         }
         Ninja ninja = buscarNinja();
         System.out.println(ninja);
+    }
+
+    public void buscarUmNinjaPeloNome() {
+        String consultaDoNomeDoNinja = obterTexto("Digite o nome do ninja desejado: ").toLowerCase();
+
+        Ninja ninjaBuscado = null;
+
+        for (Ninja ninja : ninjas) {
+            if (ninja.nome().toLowerCase().contains(consultaDoNomeDoNinja)) {
+                ninjaBuscado = ninja;
+                break;
+            }
+        }
+
+        if (ninjaBuscado != null) {
+            System.out.println("Ninja localizado com sucesso:");
+            System.out.println(ninjaBuscado);
+        } else {
+            System.out.println("Ninja não encontrado");
+        }
     }
 
     public void sair() {
@@ -127,7 +180,9 @@ class Menu {
         System.out.println("3) Remover ninja");
         System.out.println("4) Listar ninjas");
         System.out.println("5) Buscar ninja");
-        System.out.println("6) Sair");
+        System.out.println("6) Buscar ninja pelo nome");
+        System.out.println("7) Ordenar lista");
+        System.out.println("8) Sair");
     }
 
     public Ninja criarNinja() {
