@@ -1,8 +1,11 @@
 package NivelAvancado.Streams;
 
+import java.security.PrivilegedExceptionAction;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -16,10 +19,58 @@ public class Main {
         ninjas.add(new Ninja("Itachi Uchiha", 21, "Konoha"));
         ninjas.add(new Ninja("Gaara", 17, "Suna"));
 
-        Stream<Ninja> ninjasStream = ninjas.stream();
-        ninjasStream
+        printWithDivisor("Filtrando Idade = 17");
+        ninjas.stream()
                 .filter(ninja -> ninja.idade() == 17)
-                .sorted((n1, n2) -> String.CASE_INSENSITIVE_ORDER.compare(n1.nome(), n2.nome()))
                 .forEach(System.out::println);
+
+        printWithDivisor("Ordenando Nome");
+        ninjas.stream()
+                .sorted(Comparator.comparing(Ninja::nome))
+                .forEach(System.out::println);
+
+        printWithDivisor("Ordenando Idade");
+        ninjas.stream()
+                .sorted(Comparator.comparingInt(Ninja::idade))
+                .forEach(System.out::println);
+
+        printWithDivisor("Ninja mais velho");
+        Ninja ninjaMaisVelho = ninjas.stream()
+                .max(Comparator.comparingInt(Ninja::idade))
+                .orElse(null);
+
+        System.out.println(ninjaMaisVelho);
+
+        printWithDivisor("Ninja mais novo");
+        Ninja ninjaMaisNovo = ninjas.stream()
+                .min(Comparator.comparingInt(Ninja::idade))
+                .orElse(null);
+
+        System.out.println(ninjaMaisNovo);
+
+        printWithDivisor("Somando Idade");
+        int ninjaTotalIdades = ninjas.stream()
+                .map(Ninja::idade)
+                .reduce(Integer::sum)
+                .orElse(null);
+
+        System.out.println(ninjaTotalIdades);
+
+        printWithDivisor("Buscando ninja Naruto");
+        Ninja ninjaNaruto = ninjas.stream()
+                .filter(ninja -> ninja.nome().toLowerCase().contains("naruto"))
+                .findFirst()
+                .orElse(null);
+
+        System.out.println(ninjaNaruto);
+    }
+
+    static void printWithDivisor(String name) {
+        String divisor = Stream
+                .generate(() -> String.valueOf('-'))
+                .limit(5)
+                .collect(Collectors.joining());
+
+        System.out.println(divisor + " " + name + " " + divisor);
     }
 }
